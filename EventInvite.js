@@ -1,34 +1,81 @@
 import React from 'react';
 
+//Component Hierarchy
+//	EventInvite
+//		Buttons (accept/decline)
+//		Event (title, user, description, time)
 
+Class Event extends React.Component {
+	constructor(props) {
+		super(props);
+		this.props = {
+			title: '',
+			user: '',
+			description: '',
+			deadline: ''
+		};
+	}
+	
+	render() {
+		return (
+			<h1> Event: {this.props.title} </h1>
+			<h3> From: {this.props.user} </h3>
+			<h2> Description: {this.props.description} </h2>
+			<h2> RSVP Deadline: {this.props.deadline} </h2>	
+		);
+	}
+}
 
-function EventInvite() {
+class EventInvite2 extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isAccepted: false,
+			isDenied: false
+		};
+	}
 	
-	let myStyle = {
-	textAlign: "center"
-	};
+	handleClickA() {
+		this.setState(state => ({
+			isAccepted: true
+		}));
+		//Add event to user's eventList
+		//Send to homepage
+	}
 	
-	//Maybe we could have an event class or something
-	const event = {
-		title: 'Pizza Party',
-		email: 'alexmanka2022@u.northwestern.edu',
-		description: 'We gonna eat pizza',	
-		deadline: '2/10/20'
-	};
+	handleClickD() {
+		this.setState(state => ({
+			isDenied: true
+		}));
+		//Send to homepage
+	}
 	
-	//Setting up the html
-	return<div style={myStyle}>
-		<h1> Event: {event.title} </h1>
-		<h3> From: {event.email} </h3>
-		<h2> Description: {event.description} </h2>
-		<h2> RSVP Deadline: {event.deadline} </h2>
-		<button>
-			Accept
-		</button>
-		<button>
-			Decline
-		</button>
+	render() {
+		return (
+			<Event 							//Will edit these fields
+				title= 'Pizza Party',                      
+				email= 'alexmanka2022@u.northwestern.edu',
+				description= 'We gonna eat pizza',	
+				deadline= '2/12/20'
+			/>
+			<button onClick={this.handleClickA}>
+				Accept
+			</button>
+			<button onClick={this.handleClickD}>
+				Decline
+			</button>
+		);
+	}
+}
+
+let	myStyle = {
+	textAlign: 'center'
+}	
+
+let invitation = {
+	<div style={myStyle}>
+		<EventInvite2 />
 	</div>;
 }
 
-export default EventInvite;
+export default invitation;
