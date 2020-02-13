@@ -5,7 +5,11 @@ import React from 'react';
 //		Buttons (accept/decline)
 //		Event (title, user, description, time)
 
-Class Event extends React.Component {
+let	myStyle = {
+	textAlign: 'center'
+}	
+
+class EventInvite2 extends React.Component {
 	constructor(props) {
 		super(props);
 		this.props = {
@@ -14,21 +18,6 @@ Class Event extends React.Component {
 			description: '',
 			deadline: ''
 		};
-	}
-	
-	render() {
-		return (
-			<h1> Event: {this.props.title} </h1>
-			<h3> From: {this.props.user} </h3>
-			<h2> Description: {this.props.description} </h2>
-			<h2> RSVP Deadline: {this.props.deadline} </h2>	
-		);
-	}
-}
-
-class EventInvite2 extends React.Component {
-	constructor(props) {
-		super(props);
 		this.state = {
 			isAccepted: false,
 			isDenied: false
@@ -52,30 +41,20 @@ class EventInvite2 extends React.Component {
 	
 	render() {
 		return (
-			<Event 							//Will edit these fields
-				title= 'Pizza Party',                      
-				email= 'alexmanka2022@u.northwestern.edu',
-				description= 'We gonna eat pizza',	
-				deadline= '2/12/20'
-			/>
-			<button onClick={this.handleClickA}>
-				Accept
-			</button>
-			<button onClick={this.handleClickD}>
-				Decline
-			</button>
+			<div style={myStyle}>
+				<h1> Event: {this.props.title} </h1>
+				<h3> From: {this.props.user} </h3>
+				<h2> Description: {this.props.description} </h2>
+				<h2> RSVP Deadline: {this.props.deadline} </h2>
+				<button onClick={this.handleClickA}>
+					Accept
+				</button>
+				<button onClick={this.handleClickD}>
+					Decline
+				</button>
+			</div>
 		);
 	}
 }
 
-let	myStyle = {
-	textAlign: 'center'
-}	
-
-let invitation = {
-	<div style={myStyle}>
-		<EventInvite2 />
-	</div>;
-}
-
-export default invitation;
+export default EventInvite2;
