@@ -1,0 +1,62 @@
+{ "events":
+  {
+    1: {
+      "id": 1,
+      "title": "Pizza Party",
+      "description": "fun for the whole family",
+      "deadline": 2020-02-21-15-00,
+      "time": 2020-02-24-18-00,
+      "invitees": ["henry@gmail.com", "max@gmail.com", "andrew@yahoo.org"],
+      "host": "alex@gmail.com"
+    },
+    2: {
+      "id": 2,
+      "title": "Business Meeting",
+      "description": "presentations for the whole company",
+      "deadline": 2020-02-25-08-00,
+      "time": 2020-03-01-12-30,
+      "invitees": ["alex@gmail.com"],
+      "host": "henry@gmail.com"
+    },
+    3: {
+      "id": 3,
+      "title": "Bonfire",
+      "description": "warmth in winter",
+      "deadline": 2020-02-20-00-00,
+      "time": 2020-02-21-20-00,
+      "invitees": ["max@gmail.com", "henry@gmail.com"],
+      "host": "andrew@yahoo.org"
+    }
+  },
+  "users":
+  {
+    "max@gmail.com": {
+      "email": "max@gmail.com",
+      "password": "goCats!",
+      "invitations": [1],
+      "accepted": [3],
+      "events": []
+    },
+    "alex@gmail.com": {
+      "email": "alex@gmail.com",
+      "password": "password11",
+      "invitations": [],
+      "accepted": [2],
+      "events": [1]
+    },
+    "henry@gmail.com": {
+      "email": "henry@gmail.com",
+      "password": "triangulate99$",
+      "invitations": [1, 3],
+      "accepted": [],
+      "events": [2]
+    },
+    "andrew@yahoo.org": {
+      "email": "andrew@yahoo.org",
+      "password": "CS88_00",
+      "invitations": [],
+      "accepted": [1],
+      "events": [3]
+    }
+  }
+}
